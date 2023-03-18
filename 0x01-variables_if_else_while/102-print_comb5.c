@@ -1,22 +1,19 @@
 #include <stdio.h>
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
+* main - print numbers 00 to 99
+* description - nested loop
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
-	int nums;
-	int nums1;
+	int a;
 
-	for (nums = '0'; nums <= '9'; nums++)
+	for (a = 0; a < 100; a++)
 	{
-		for (nums1 = '0'; nums1 <= '9'; nums1++)
+		putchar('0' + a / 10);
+		putchar('0' + a % 10);
+		if (!(a == 99))
 		{
-			putchar(nums);
-			putchar(nums1);
-			if (nums == '9' && nums1 == '9')
-			continue;
 			putchar(',');
 			putchar(' ');
 		}
