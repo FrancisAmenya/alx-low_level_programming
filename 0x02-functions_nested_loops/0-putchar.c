@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <main.h>
 
 /**
  * main - entry point
@@ -10,10 +10,14 @@
 
 int main(void)
 {
-	char *c;
-
-	*c = "_putchar";
-	putchar(*c);
-	putchar('\n');
+	_puctchar('_');
+	_puctchar('p');
+	_puctchar('u');
+	_puctchar('t');
+	_puctchar('c');
+	_puctchar('h');
+	_puctchar('s');
+	_puctchar('r');
+	_putchar('\n');
 	return (0);
 }
