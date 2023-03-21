@@ -10,11 +10,10 @@
 
 int main(void)
 {
-	char c;
+	char *c;
 
-	c = '_putchar';
-	putchar(c);
-	putchar('\n'
+	*c = '_putchar';
+	putchar("%s\n", *c);
 
 	return (0);
 }
