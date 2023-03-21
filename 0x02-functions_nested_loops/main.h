@@ -1,3 +1,5 @@
-#define MAIN.H "main.h"
+#ifndef MAIN_H_
+#define MAIN_H_
 
-#include MAIN.H
+int _putchar(char c);
+#endif
