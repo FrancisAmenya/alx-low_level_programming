@@ -12,8 +12,9 @@ int main(void)
 {
 	char c;
 
-	c = "_putchar" + '0';
+	c = '_putchar';
 	putchar(c);
+	putchar('\n'
 
 	return (0);
 }
