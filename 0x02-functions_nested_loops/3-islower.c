@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* _islower func - checks for lowercase letter
+* _islower -a func  checks for lowercase letter
 * @c: lowercase letters
 * Return: 1 if c, 0 for everything else
 */
