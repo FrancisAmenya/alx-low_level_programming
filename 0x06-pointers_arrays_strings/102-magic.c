@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main - entry point,
  * description -  a magic file to make a print 98,
  * Return: 0 always
@@ -15,7 +15,7 @@ int main(void)
 
 	a[2] = 1024;
 	p = &n;
-/*
+/**
  * write your line of code here...
  * Remember:
  * - you are not allowed to use a
