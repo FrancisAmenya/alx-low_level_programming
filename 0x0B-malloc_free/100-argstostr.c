@@ -1,54 +1,50 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
- * _strlen - get length
- * @c: string
- * Return: returns length
- */
-
-int _strlen(char *c)
-{
-	int len;
-
-	for (len = 0; c[len] != '\0'; len++)
-		;
-
-	return (len);
-}
-
-/**
- * argstostr - concat str
- * @ac: number of args
- * @av: args
- * Return: returns a pointer to the two strings concatenated, or NULL if fails
+ * *argstostr - convert arguments on command line to strings
+ *
+ * @ac: int type
+ *
+ * @av: pointer to array
+ *
+ * Return: args as strings
  */
 
 char *argstostr(int ac, char **av)
 {
-	char *ptr;
-	int x, y, len = 0, c;
+	int counter1, counter2, counter3 = 0;
+	char *strTemp;
 
 	if (ac == 0 || av == NULL)
-		return (NULL);
-
-	for (x = 0; x < ac; x++)
-		len += _strlen(av[x]);
-
-	ptr = malloc((len + ac + 1) * sizeof(char));
-
-	if (!ptr)
-		return (NULL);
-
-	for (x = 0; x < ac; x++)
 	{
-		for (y = 0; av[x][y] != '\0'; y++, c++)
-			ptr[c] = av[x][y];
-		ptr[c] = '\n';
-		c++;
+		return (NULL);
 	}
-	ptr[c] = '\0';
-	return (ptr);
+
+	for (counter1 = 0; counter1 < ac; counter1++)
+	{
+		for (counter2 = 0; av[counter1][counter2] != '\0'; counter2++, counter3++)
+		{
+			;
+		}
+	}
+
+	strTemp = malloc(sizeof(char) * (counter3 + ac + 1));
+
+	if (strTemp == NULL)
+	{
+		return (NULL);
+	}
+
+	for (counter1 = 0, counter3 = 0; counter1 < ac; counter1++)
+	{
+		for (counter2 = 0; av[counter1][counter2] != '\0'; counter2++, counter3++)
+		{
+			strTemp[counter3] = av[counter1][counter2];
+		}
+		strTemp[counter3] = '\n';
+		counter3++;
+	}
+	return (strTemp);
 }
