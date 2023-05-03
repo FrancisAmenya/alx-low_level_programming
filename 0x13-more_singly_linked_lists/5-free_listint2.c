@@ -1,21 +1,27 @@
 #include "lists.h"
 
 /**
- * free_listint - Free listint_t  a
+ * free_listint2 - Free listint_t  a
  *
  * @head: Head of nodea
  *
  * Return: voida
  */
-
-void free_listint(listint_t *head)
+void free_listint2(listint_t **head)
 {
-	listint_t *new;
+	listint_t *new_node1 = NULL, *new_node2 = NULL;
 
-	while (head)
+	if (head == NULL)
 	{
-		new = head;
-		head = head->next;
-		free(new);
+		return;
 	}
+	new_node1 = *head;
+
+	while (new_node1 != NULL)
+	{
+		new_node2 = new_node1;
+		new_node1 = new_node1->next;
+		free(new_node2);
+	}
+	*head = NULL;
 }
