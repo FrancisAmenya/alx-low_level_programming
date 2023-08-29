@@ -11,7 +11,7 @@ int _strlen_recursion(char *sr);
 
 int factorial(int f);
 
-int _pow_recursion(int r, int p);
+int _pow_recursion(int x, int y);
 
 int _sqrt_recursion(int sr);
 
