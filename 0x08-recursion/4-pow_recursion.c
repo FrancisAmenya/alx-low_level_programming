@@ -9,9 +9,9 @@
  */
 int _pow_recursion(int r, int p)
 {
-	if (r < 0)
+	if (p < 0)
 		return (-1);
-	if (r == 0)
+	if (p == 0)
 		return (1);
-	return (r * _pow_recursion(r, p - 1));
+	return (p * _pow_recursion(p, r - 1));
 }
