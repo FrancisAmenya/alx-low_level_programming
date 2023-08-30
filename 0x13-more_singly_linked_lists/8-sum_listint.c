@@ -13,8 +13,8 @@ listint_t *tempers = head;
 
 while (tempers)
 {
-intsum += tempers->intn;
-tempers = tempers->nextnode;
+intsum += tempers->n;
+tempers = tempers->next;
 }
 
 return (intsum);
