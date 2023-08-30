@@ -15,8 +15,8 @@ int specnum;
 if (!head || !*head)
 return (0);
 
-specnum = (*head)->intn;
-tempers = (*head)->nextnode;
+specnum = (*head)->n;
+tempers = (*head)->next;
 free(*head);
 *head = tempers;
 
