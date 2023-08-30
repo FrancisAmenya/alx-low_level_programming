@@ -19,12 +19,12 @@ newnew = malloc(sizeof(listint_t));
 if (!newnew || !head)
 return (NULL);
 
-newnew->intn = n;
-newnew->nextnode = NULL;
+newnew->n = n;
+newnew->next = NULL;
 
 if (idx == 0)
 {
-newnew->nextnode = *head;
+newnew->next = *head;
 *head = newnew;
 return (newnew);
 }
@@ -33,8 +33,8 @@ for (inti = 0; tempers && inti < idx; inti++)
 {
 if (inti == idx - 1)
 {
-newnew->nextnode = tempers->nextnode;
-tempers->nextnode = newnew;
+newnew->next = tempers->next;
+tempers->next = newnew;
 return (newnew);
 }
 else
