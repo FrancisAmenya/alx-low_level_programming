@@ -10,7 +10,7 @@ listint_t *tempers;
 
 while (head)
 {
-tempers = head->nextnode;
+tempers = head->next;
 free(head);
 head = tempers;
 }
