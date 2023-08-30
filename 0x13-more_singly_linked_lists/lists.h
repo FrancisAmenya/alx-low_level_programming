@@ -9,12 +9,12 @@
  * @intn: specified integer used to print listint_s list
  * @nextnode: specified points to the nextnode node in linked list listint_s
  *
- * Description: specified singly linked list node structure in the singly linked list
+ * Description: specified sll node structure 4 singly linked list
  **/
 typedef struct listint_s
 {
- int intn;
- struct listint_s *nextnode;
+int intn;
+struct listint_s *nextnode;
 } listint_t;
 
 size_t print_listint(const listint_t *h);

@@ -9,16 +9,16 @@
  */
 int pop_listint(listint_t **head)
 {
- listint_t *tempers;
- int specnum;
+listint_t *tempers;
+int specnum;
 
- if (!head || !*head)
- return (0);
+if (!head || !*head)
+return (0);
 
- specnum = (*head)->intn;
- tempers = (*head)->nextnode;
- free(*head);
- *head = tempers;
+specnum = (*head)->intn;
+tempers = (*head)->nextnode;
+free(*head);
+*head = tempers;
 
- return (specnum);
+return (specnum);
 }
