@@ -18,22 +18,22 @@ return (-1);
 
 if (index == 0)
 {
-*head = (*head)->nextnode;
+*head = (*head)->next;
 free(tempers);
 return (1);
 }
 
 while (inti < index - 1)
 {
-if (!tempers || !(tempers->nextnode))
+if (!tempers || !(tempers->next))
 return (-1);
-tempers = tempers->nextnode;
+tempers = tempers->next;
 inti++;
 }
 
 
-listcurrent = tempers->nextnode;
-tempers->nextnode = listcurrent->nextnode;
+listcurrent = tempers->next;
+tempers->next = listcurrent->next;
 free(listcurrent);
 
 return (1);
