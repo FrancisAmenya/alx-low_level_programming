@@ -38,7 +38,7 @@ tempers->next = newnew;
 return (newnew);
 }
 else
-tempers = tempers->nextnode;
+tempers = tempers->next;
 }
 
 return (NULL);
