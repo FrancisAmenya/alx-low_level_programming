@@ -6,15 +6,15 @@
 
 /**
  * struct listint_s - a specified simple singly linked list to be printed
- * @intn: specified integer used to print listint_s list
- * @nextnode: specified points to the nextnode node in linked list listint_s
+ * @n: specified integer used to print listint_s list
+ * @next: specified points to the nextnode node in linked list listint_s
  *
  * Description: specified sll node structure 4 singly linked list
  **/
 typedef struct listint_s
 {
-int intn;
-struct listint_s *nextnode;
+int n;
+struct listint_s *next;
 } listint_t;
 
 size_t print_listint(const listint_t *h);
