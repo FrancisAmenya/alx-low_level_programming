@@ -17,10 +17,10 @@ return (0);
 
 while (*h)
 {
-diffdiff = *h - (*h)->nextnode;
+diffdiff = *h - (*h)->next;
 if (diffdiff > 0)
 {
-temptemp = (*h)->nextnode;
+temptemp = (*h)->next;
 free(*h);
 *h = temptemp;
 lenlen++;

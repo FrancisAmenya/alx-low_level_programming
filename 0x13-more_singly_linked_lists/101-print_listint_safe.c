@@ -17,11 +17,11 @@ size_t looped_listint_len(const listint_t *head)
 const listint_t *ftortoise, *thehare;
 size_t nodesnum = 1;
 
-if (head == NULL || head->nextnode == NULL)
+if (head == NULL || head->next == NULL)
 return (0);
 
-ftortoise = head->nextnode;
-thehare = (head->nextnode)->nextnode;
+ftortoise = head->next;
+thehare = (head->next)->next;
 
 while (thehare)
 {
@@ -31,22 +31,22 @@ ftortoise = head;
 while (ftortoise != thehare)
 {
 nodesnum++;
-ftortoise = ftortoise->nextnode;
-thehare = thehare->nextnode;
+ftortoise = ftortoise->next;
+thehare = thehare->next;
 }
 
-ftortoise = ftortoise->nextnode;
+ftortoise = ftortoise->next;
 while (ftortoise != thehare)
 {
 nodesnum++;
-ftortoise = ftortoise->nextnode;
+ftortoise = ftortoise->next;
 }
 
 return (nodesnum);
 }
 
-ftortoise = ftortoise->nextnode;
-thehare = (thehare->nextnode)->nextnode;
+ftortoise = ftortoise->next;
+thehare = (thehare->next)->next;
 }
 
 return (0);
@@ -67,8 +67,8 @@ if (nodesnum == 0)
 {
 for (; head != NULL; nodesnum++)
 {
-printf("[%p] %d\n", (void *)head, head->intn);
-head = head->nextnode;
+printf("[%p] %d\n", (void *)head, head->n);
+head = head->next;
 }
 }
 
@@ -76,11 +76,11 @@ else
 {
 for (index = 0; index < nodesnum; index++)
 {
-printf("[%p] %d\n", (void *)head, head->intn);
-head = head->nextnode;
+printf("[%p] %d\n", (void *)head, head->n);
+head = head->next;
 }
 
-printf("-> [%p] %d\n", (void *)head, head->intn);
+printf("-> [%p] %d\n", (void *)head, head->n);
 }
 
 return (nodesnum);

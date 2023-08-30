@@ -14,17 +14,17 @@ listint_t *fastfast = head;
 if (!head)
 return (NULL);
 
-while (slowslow && fastfast && fastfast->nextnode)
+while (slowslow && fastfast && fastfast->next)
 {
-fastfast = fastfast->nextnode->nextnode;
-slowslow = slowslow->nextnode;
+fastfast = fastfast->next->next;
+slowslow = slowslow->next;
 if (fastfast == slowslow)
 {
 slowslow = head;
 while (slowslow != fastfast)
 {
-slowslow = slowslow->nextnode;
-fastfast = fastfast->nextnode;
+slowslow = slowslow->next;
+fastfast = fastfast->next;
 }
 return (fastfast);
 }
