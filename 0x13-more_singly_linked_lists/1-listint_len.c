@@ -13,7 +13,7 @@ size_t numnodes = 0;
 while (h)
 {
 numnodes++;
-h = h->nextnode;
+h = h->next;
 }
 
 return (numnodes);
