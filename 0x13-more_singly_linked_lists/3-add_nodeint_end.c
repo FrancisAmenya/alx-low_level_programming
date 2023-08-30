@@ -16,8 +16,8 @@ newnew = malloc(sizeof(listint_t));
 if (!newnew)
 return (NULL);
 
-newnew->intn = n;
-newnew->nextnode = NULL;
+newnew->n = n;
+newnew->next = NULL;
 
 if (*head == NULL)
 {
@@ -25,10 +25,10 @@ if (*head == NULL)
 return (newnew);
 }
 
-while (tempers->nextnode)
-tempers = tempers->nextnode;
+while (tempers->next)
+tempers = tempers->next;
 
-tempers->nextnode = newnew;
+tempers->next = newnew;
 
 return (newnew);
 }
