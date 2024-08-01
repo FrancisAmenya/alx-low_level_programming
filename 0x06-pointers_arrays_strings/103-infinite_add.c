@@ -1,6 +1,5 @@
-#include <stdio.h>
+#include "main.h"
 
-char *infinite_add(char *n1, char *n2, char *r, int size_r);
 int get_length(char *str);
 void perform_addition(char *n1, char *n2, char *r, int size_r, int l1, int l2);
 void shift_result(char *r);
@@ -16,13 +15,12 @@ void shift_result(char *r);
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int l1;
-	int l2;
+	int l1, l2;
 
 	l1 = get_length(n1);
 	l2 = get_length(n2);
 
-	if (l1 + 1 > size_r || l2 + 1 > size_r)
+	if (l1 + 2 > size_r || l2 + 2 > size_r)
 		return (0);
 
 	perform_addition(n1, n2, r, size_r, l1, l2);
@@ -61,10 +59,9 @@ int get_length(char *str)
  */
 void perform_addition(char *n1, char *n2, char *r, int size_r, int l1, int l2)
 {
-	int i = l1 - 1, j = l2 - 1, k = size_r - 1, sum, carry = 0;
+	int i = l1 - 1, j = l2 - 1, k = size_r - 2, sum, carry = 0;
 
-	r[k] = '\0';
-	k--;
+	r[size_r - 1] = '\0';
 
 	while (i >= 0 || j >= 0 || carry)
 	{
@@ -99,7 +96,10 @@ void shift_result(char *r)
 
 	for (i = 0; r[i] == '\0'; i++)
 		;
-	for (j = 0; r[i]; i++, j++)
-		r[j] = r[i];
-	r[j] = '\0';
+	if (i > 0)
+	{
+		for (j = 0; r[i]; i++, j++)
+			r[j] = r[i];
+		r[j] = '\0';
+	}
 }
