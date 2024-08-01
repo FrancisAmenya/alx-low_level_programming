@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_times_table - prints out the n times table, starting with 0
- * @n: times table
+ * print_times_table - prints the n times table, starting with 0
+ * @n: times table to print
  */
 void print_times_table(int n)
 {
@@ -16,33 +16,14 @@ void print_times_table(int n)
 		for (y = 0; y <= n; y++)
 		{
 			z = x * y;
-
 			if (y == 0)
-			{
 				_putchar(z + '0');
-			}
-			else if (z < 10)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(z + '0');
-			}
-			else if (z < 100)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar((z / 10) + '0');
-				_putchar((z % 10) + '0');
-			}
 			else
 			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar((z / 100) + '0');
-				_putchar(((z / 10) % 10) + '0');
+				_putchar(z < 100 ? ' ' : (z / 100) + '0');
+				_putchar(z < 10 ? ' ' : ((z / 10) % 10) + '0');
 				_putchar((z % 10) + '0');
 			}
 		}
