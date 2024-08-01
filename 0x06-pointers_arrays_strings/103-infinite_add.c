@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
 int get_length(char *str);
 void perform_addition(char *n1, char *n2, char *r, int size_r, int l1, int l2);
 void shift_result(char *r);
