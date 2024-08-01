@@ -1,37 +1,36 @@
-#include "main.h"
-
-/**
- * _atoi - converts a string to an integer
- *
- * @ll: the destination string
- * Return: the pointer to dest
- */
-
-char *_atoi(char *ll)
+pointers, vs arrays, vs strings
+int _atoi(char *s)
 {
-	int i;
+	int result = 0;
+	int sign = 1;
+	int digit;
+	int started = 0;
 
-	for (i = 0; i <= _strlen(*ll); i++)
-		*ll[i] = src[i];
-	return (*ll);
-}
-
-/**
- * _strlen - length of a string
- * @s: the string to check
- *
- * Return: length of the string
- */
-
-int _strlen(char *s)
-{
-	int length;
-
-	length = 0;
-
-	for (length = 0; *s != '\0'; s++)
+	while (*s)
 	{
-		length++;
+		if (*s == '-')
+		{
+			sign *= -1;
+		}
+		else if (*s >= '0' && *s <= '9')
+		{
+			digit = *s - '0';
+
+			if (result > (INT_MAX - digit) / 10)
+			{
+				return (sign == 1) ? INT_MAX : INT_MIN;
+			}
+
+			result = result * 10 + digit;
+			started = 1;
+		}
+		else if (started)
+		{
+			break;
+		}
+
+		s++;
 	}
-	return (length);
+
+	return result * sign;
 }
