@@ -1,12 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - entry point,
- * description -  a magic file to make a print 98,
- * Return: 0 always
- *
- */
-
 int main(void)
 {
 	int n;
