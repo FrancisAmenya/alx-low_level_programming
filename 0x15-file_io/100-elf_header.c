@@ -1,4 +1,10 @@
-#include "main.h"
+#include <elf.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
@@ -133,7 +139,7 @@ void print_version(unsigned char *e_ident)
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	Elf64_Ehdr *header;
+	Elf32_Ehdr *header;
 	int o, r;
 
 	o = open(argv[1], O_RDONLY);
@@ -142,14 +148,14 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
-	header = malloc(sizeof(Elf64_Ehdr));
+	header = malloc(sizeof(Elf32_Ehdr));
 	if (header == NULL)
 	{
 		close(o);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
-	r = read(o, header, sizeof(Elf64_Ehdr));
+	r = read(o, header, sizeof(Elf32_Ehdr));
 	if (r == -1)
 	{
 		free(header);
